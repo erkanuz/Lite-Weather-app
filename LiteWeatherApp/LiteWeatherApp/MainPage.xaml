@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LiteWeatherApp.MainPage">
+
+    <ScrollView>
+        <Grid>
+            <Grid RowDefinitions="Auto,Auto,Auto,*" BackgroundColor="Black" VerticalOptions="FillAndExpand" RowSpacing="0">
+
+                <!-- Put the main picture -->
+                <Image Source="background.jpg" Aspect="Fill" HeightRequest="300"/>
+                <!-- create the CityName -->
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="Start" Spacing="20" Margin="20,50">
+                    <Label x:Name="CityName" Text="LONDON" FontSize="16" TextColor="White"/>
+                </StackLayout>
+                <!-- creating the icon of day and writing the temperature and description of weather and date -->
+                <StackLayout Orientation="Vertical" HorizontalOptions="Center" VerticalOptions="Center" Margin="0,20">
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                        <Image x:Name="Wicon" Source="cloud.png" WidthRequest="50" HeightRequest="50"/>
+                        <Label x:Name="Temperature" Text="20" TextColor="White" FontSize="70" FontAttributes="Bold" VerticalOptions="Center"/>
+                        <Label Text="C"  TextColor="White" FontSize="34" VerticalOptions="Start"/>
+                    </StackLayout>
+                    <Label x:Name="description" Text="Mostly cloudy" TextColor="White" FontSize="16" HorizontalOptions="Center"/>
+                    <Label x:Name="dateH" Text="Octomber 22" TextColor="White" FontSize="12" HorizontalOptions="Center"/>
+                </StackLayout>
+                <!-- create humidity, wind and pressure values -->
+                <Grid HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" Padding="15">
+
+                    <StackLayout Grid.Column="0" Orientation="Vertical" Spacing="0" HorizontalOptions="CenterAndExpand">
+                        <Image Source="drop.png" HeightRequest="20"/>
+                        <Label x:Name="dropT" Text="75%" TextColor="White" FontSize="14" FontAttributes="Bold"/>
+                    </StackLayout>
+
+                    <StackLayout Grid.Column="1" Orientation="Vertical" Spacing="0" HorizontalOptions="CenterAndExpand">
+                        <Image Source="wind.png" HeightRequest="20"/>
+                        <Label x:Name="windT" Text="3.7km/h" TextColor="White" FontSize="14" FontAttributes="Bold"/>
+                    </StackLayout>
+
+                    <StackLayout Grid.Column="2" Orientation="Vertical" Spacing="0" HorizontalOptions="CenterAndExpand">
+                        <Image Source="umbrella.png" HeightRequest="20"/>
+                        <Label x:Name="umbrellaT" Text="0mm" TextColor="White" FontSize="14" FontAttributes="Bold"/>
+                    </StackLayout>
+                </Grid>
+                <!--creating a weekly Forecast (Days/Temperatures/Icons)-->
+                <Frame VerticalOptions="EndAndExpand" CornerRadius="20" Margin="0,-10,0,0" Padding="15,22,15,0" Grid.Row="1">
+
+                    <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto" RowSpacing="10">
+
+                        <Grid>
+                            <Label Text="Extended forecast" TextColor="Black" FontSize="13" FontAttributes="Bold" HorizontalOptions="Center"/>
+                        </Grid>
+
+                        <Grid Grid.Row="1">
+                            <Label x:Name="firstday" Text="Mon" TextColor="Black" FontSize="13" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center"/>
+                            <Label x:Name="firstTemp" Text="15" TextColor="Black" FontSize="15" FontAttributes="Bold" HorizontalOptions="End" VerticalOptions="Center"/>
+                            <Image x:Name="firstwicon" Source="cloud.png" Margin="0,20" WidthRequest="20" HeightRequest="20" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        </Grid>
+
+                        <Grid Grid.Row="2">
+                            <Label x:Name="secounday" Text="Tue" TextColor="Black" FontSize="13" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center"/>
+                            <Label x:Name="secoundTemp" Text="20" TextColor="Black" FontSize="15" FontAttributes="Bold" HorizontalOptions="End" VerticalOptions="Center"/>
+                            <Image x:Name="secoundwicon" Source="cloud.png" Margin="0,20" WidthRequest="20" HeightRequest="20" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        </Grid>
+
+                        <Grid Grid.Row="3">
+                            <Label x:Name="thirdday" Text="Wed" TextColor="Black" FontSize="13" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center"/>
+                            <Label x:Name="thirdTemp" Text="25" TextColor="Black" FontSize="15" FontAttributes="Bold" HorizontalOptions="End" VerticalOptions="Center"/>
+                            <Image x:Name="thirdwicon" Source="cloud.png" Margin="0,20" WidthRequest="20" HeightRequest="20" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        </Grid>
+
+                        <Grid Grid.Row="4">
+                            <Label x:Name="fourthday" Text="Thu" TextColor="Black" FontSize="13" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center"/>
+                            <Label x:Name="fourthTemp" Text="30" TextColor="Black" FontSize="15" FontAttributes="Bold" HorizontalOptions="End" VerticalOptions="Center"/>
+                            <Image x:Name="fourthwicon" Source="cloud.png" Margin="0,20" WidthRequest="20" HeightRequest="20" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        </Grid>
+
+                        <Grid Grid.Row="5">
+                            <Label x:Name="fivethday" Text="Fri" TextColor="Black" FontSize="13" FontAttributes="Bold" HorizontalOptions="Start" VerticalOptions="Center"/>
+                            <Label x:Name="fivethTemp" Text="30" TextColor="Black" FontSize="15" FontAttributes="Bold" HorizontalOptions="End" VerticalOptions="Center"/>
+                            <Image x:Name="fivethwicon" Source="cloud.png" Margin="0,20" WidthRequest="20" HeightRequest="20" HorizontalOptions="Center" VerticalOptions="Center"/>
+                        </Grid>
+
+                    </Grid>
+
+                </Frame>
+            </Grid>
+        </Grid>
+    </ScrollView>
+
+</ContentPage>
